@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import { Analytics } from "@vercel/analytics/next";
 export default function Layout({ children }) {
   return (
     <div className="layout">
@@ -13,7 +13,9 @@ export default function Layout({ children }) {
         </Link>
       </header>
 
-      <div className="page-content">{children}</div>
+      <div className="page-content">
+        {children} <Analytics />
+      </div>
 
       <footer>
         <p>Copyright 2025 Just Add Marmite :)</p>
